@@ -115,7 +115,7 @@ script:
   - ulimit -n 4096
   - install_run $PLAT
 
-after_success:
+after_script:
   # trigger an upload to the shared ecosystem
   # infrastructure at: https://anaconda.org/scipy-wheels-nightly
   # for cron jobs only (restricted to master branch once
