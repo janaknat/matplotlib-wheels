@@ -20,6 +20,7 @@ env:
     # Matplotlib commit when running from master branch
     - DAILY_COMMIT=master
 
+sudo: required
 language: python
 # Default Python version is usually 2.7
 python: 3.7
