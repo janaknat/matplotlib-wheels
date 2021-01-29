@@ -34,6 +34,7 @@ function pre_build {
     # Use local freetype for versions which support it
     local has_local=$(cd matplotlib && set +e; git merge-base --is-ancestor $LOCAL_FT_COMMIT HEAD && echo 1)
     if [ -n "$has_local" ]; then
+	echo "MPLLOCALFREETYPE is set"
         export MPLLOCALFREETYPE=1
     else
         build_freetype
@@ -71,6 +72,7 @@ function run_tests {
     export PYTHONHASHSEED=$(python -c 'import random; print(random.randint(1, 4294967295))')
     echo PYTHONHASHSEED=$PYTHONHASHSEED
 
+    export MPLLOCALFREETYPE=1
     echo "testing matplotlib using $NPROC process(es)"
     py.test $PYTEST_ARGS -m 'not network' $MPL_INSTALL_DIR $(dirname ${MPL_INSTALL_DIR})/mpl_toolkits
 
