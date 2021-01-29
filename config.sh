@@ -74,6 +74,7 @@ function run_tests {
 
     export MPLLOCALFREETYPE=1
     echo "testing matplotlib using $NPROC process(es)"
+    echo "PYTEST_ARGS: $PYTEST_ARGS"
     py.test $PYTEST_ARGS -m 'not network' $MPL_INSTALL_DIR $(dirname ${MPL_INSTALL_DIR})/mpl_toolkits
 
     echo "Check import of tcl / tk"
