@@ -51,7 +51,7 @@ jobs:
         - NP_TEST_DEP=1.16
     - os: linux
       arch: arm64-graviton2
-      dist: focal
+      dist: bionic
       virt: vm
       group: edge
       python: 3.7
@@ -64,7 +64,7 @@ jobs:
         - DOCKER_TEST_IMAGE=multibuild/xenial_{PLAT}
     - os: linux
       arch: arm64-graviton2
-      dist: focal
+      dist: bionic
       virt: vm
       group: edge
       python: 3.8
